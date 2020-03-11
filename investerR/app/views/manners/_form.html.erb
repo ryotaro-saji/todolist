@@ -1,0 +1,22 @@
+<%= form_with(model: manner, local: true) do |f| %>
+  <% if manner.errors.any? %>
+    <div id="error_explanation">
+      
+
+      <ul>
+        <% manner.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+  
+  <%= f.label :method, '投資手法' %>
+  <%= f.text_field :method %>
+  
+  <%= f.label :like, '今イチオシの銘柄' %>
+  <%= f.text_field :like %>
+ 
+
+  <%= f.submit '登録' %>
+<% end %>
